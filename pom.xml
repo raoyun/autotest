@@ -32,6 +32,13 @@
             <version>1.16.10</version>
         </dependency>
 
+        <!--热启动-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
+        </dependency>
+
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
@@ -56,6 +63,14 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
+        <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+            <configuration>
+                <!--fork:如果没有该项配置,整个devtools不会起作用-->
+                <fork>true</fork>
+            </configuration>
+        </plugin>
     </build>
 
 </project>
